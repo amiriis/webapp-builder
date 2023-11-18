@@ -1,6 +1,6 @@
 {
   "name": "@witel/webapp-builder",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,7 @@
     "material-react-table": "^1.11.1",
     "moment-jalaali": "^0.10.0",
     "next": "^13.3.0",
-    "next-intl": "^^2.13.1",
+    "next-intl": "^2.13.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-toastify": "^9.1.3",
