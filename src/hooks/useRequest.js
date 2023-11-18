@@ -2,10 +2,10 @@ import axios from "axios";
 import {errorRequest, errorResponse, errorSetting} from "../utils/errorHandler";
 import {successRequest} from "../utils/succesHandler";
 import {useTranslations} from "next-intl";
-import useUser from "../hooks/useUser";
-import useNetwork from "../hooks/useNetwork";
+import useUser from "./useUser";
+import useNetwork from "./useNetwork";
 import Notifications from "../components/notifications";
-import useToast from "../hooks/useToast";
+import useToast from "./useToast";
 
 const defaultOptions = {
     auth: false, data: {}, requestOptions: {
