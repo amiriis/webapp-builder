@@ -1,6 +1,6 @@
 {
   "name": "@witel/webapp-builder",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,7 @@
     "axios": "^1.6.2",
     "material-react-table": "^1.11.1",
     "moment-jalaali": "^0.10.0",
-    "next": "^14.0.3",
+    "next": "^13.3.0",
     "next-intl": "^3.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
