@@ -8,7 +8,7 @@ require("core-js/modules/es.promise.js");
 require("core-js/modules/es.symbol.description.js");
 var _axios = _interopRequireDefault(require("axios"));
 var _errorHandler = require("../utils/errorHandler");
-var _succesHandler = require("../utils/succesHandler");
+var _successHandler = require("../utils/successHandler");
 var _nextIntl = require("next-intl");
 var _useUser = _interopRequireDefault(require("./useUser"));
 var _useNetwork = _interopRequireDefault(require("./useNetwork"));
@@ -77,7 +77,7 @@ const useRequest = initOptions => {
         method: method,
         data: _options.data
       }, _options.requestOptions)).then(response => {
-        (0, _succesHandler.successRequest)(pushToastList, dismissToastList, response, t, _options);
+        (0, _successHandler.successRequest)(pushToastList, dismissToastList, response, t, _options);
         resolve(response);
       }).catch(error => {
         if (error.response) {

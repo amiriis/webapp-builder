@@ -3,58 +3,39 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var _useRequest = require("./useRequest");
-Object.keys(_useRequest).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  if (key in exports && exports[key] === _useRequest[key]) return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _useRequest[key];
-    }
-  });
+Object.defineProperty(exports, "useLanguage", {
+  enumerable: true,
+  get: function get() {
+    return _useLanguage.default;
+  }
 });
-var _useLanguage = require("./useLanguage");
-Object.keys(_useLanguage).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  if (key in exports && exports[key] === _useLanguage[key]) return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _useLanguage[key];
-    }
-  });
+Object.defineProperty(exports, "useNetwork", {
+  enumerable: true,
+  get: function get() {
+    return _useNetwork.default;
+  }
 });
-var _useUser = require("./useUser");
-Object.keys(_useUser).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  if (key in exports && exports[key] === _useUser[key]) return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _useUser[key];
-    }
-  });
+Object.defineProperty(exports, "useRequest", {
+  enumerable: true,
+  get: function get() {
+    return _useRequest.default;
+  }
 });
-var _useToast = require("./useToast");
-Object.keys(_useToast).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  if (key in exports && exports[key] === _useToast[key]) return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _useToast[key];
-    }
-  });
+Object.defineProperty(exports, "useToast", {
+  enumerable: true,
+  get: function get() {
+    return _useToast.default;
+  }
 });
-var _useNetwork = require("./useNetwork");
-Object.keys(_useNetwork).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  if (key in exports && exports[key] === _useNetwork[key]) return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _useNetwork[key];
-    }
-  });
+Object.defineProperty(exports, "useUser", {
+  enumerable: true,
+  get: function get() {
+    return _useUser.default;
+  }
 });
+var _useRequest = _interopRequireDefault(require("./useRequest"));
+var _useLanguage = _interopRequireDefault(require("./useLanguage"));
+var _useUser = _interopRequireDefault(require("./useUser"));
+var _useToast = _interopRequireDefault(require("./useToast"));
+var _useNetwork = _interopRequireDefault(require("./useNetwork"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

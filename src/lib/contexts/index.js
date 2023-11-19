@@ -1,3 +1,5 @@
-export * from './user'
-export * from './toast'
-export * from './language'
+import * as User from './user'
+import * as Toast from './toast'
+import * as Language from './language'
+
+export {User, Toast, Language}

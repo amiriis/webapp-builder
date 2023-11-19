@@ -1,6 +1,6 @@
 import axios from "axios";
 import {errorRequest, errorResponse, errorSetting} from "../utils/errorHandler";
-import {successRequest} from "../utils/succesHandler";
+import {successRequest} from "../utils/successHandler";
 import {useTranslations} from "next-intl";
 import useUser from "./useUser";
 import useNetwork from "./useNetwork";

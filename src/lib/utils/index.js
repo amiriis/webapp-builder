@@ -1,2 +1,4 @@
-export * from './errorHandler'
-export * from './succesHandler'
+import * as ErrorHandler from './errorHandler'
+import * as SuccessHandler from './successHandler'
+
+export {ErrorHandler, SuccessHandler}

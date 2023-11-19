@@ -3,69 +3,46 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var _NotificationManager = require("./NotificationManager");
-Object.keys(_NotificationManager).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  if (key in exports && exports[key] === _NotificationManager[key]) return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _NotificationManager[key];
-    }
-  });
+Object.defineProperty(exports, "ErrorNotification", {
+  enumerable: true,
+  get: function get() {
+    return _ErrorNotification.default;
+  }
 });
-var _ErrorNotification = require("./ErrorNotification");
-Object.keys(_ErrorNotification).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  if (key in exports && exports[key] === _ErrorNotification[key]) return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _ErrorNotification[key];
-    }
-  });
+Object.defineProperty(exports, "NotificationManager", {
+  enumerable: true,
+  get: function get() {
+    return _NotificationManager.default;
+  }
 });
-var _PendingNotification = require("./PendingNotification");
-Object.keys(_PendingNotification).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  if (key in exports && exports[key] === _PendingNotification[key]) return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _PendingNotification[key];
-    }
-  });
+Object.defineProperty(exports, "PendingNotification", {
+  enumerable: true,
+  get: function get() {
+    return _PendingNotification.default;
+  }
 });
-var _SuccessNotification = require("./SuccessNotification");
-Object.keys(_SuccessNotification).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  if (key in exports && exports[key] === _SuccessNotification[key]) return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _SuccessNotification[key];
-    }
-  });
+Object.defineProperty(exports, "SuccessNotification", {
+  enumerable: true,
+  get: function get() {
+    return _SuccessNotification.default;
+  }
 });
-var _WarningNotification = require("./WarningNotification");
-Object.keys(_WarningNotification).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  if (key in exports && exports[key] === _WarningNotification[key]) return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _WarningNotification[key];
-    }
-  });
+Object.defineProperty(exports, "UploadFileNotification", {
+  enumerable: true,
+  get: function get() {
+    return _UploadFileNotification.default;
+  }
 });
-var _UploadFileNotification = require("./UploadFileNotification");
-Object.keys(_UploadFileNotification).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  if (key in exports && exports[key] === _UploadFileNotification[key]) return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _UploadFileNotification[key];
-    }
-  });
+Object.defineProperty(exports, "WarningNotification", {
+  enumerable: true,
+  get: function get() {
+    return _WarningNotification.default;
+  }
 });
+var _NotificationManager = _interopRequireDefault(require("./NotificationManager"));
+var _ErrorNotification = _interopRequireDefault(require("./ErrorNotification"));
+var _PendingNotification = _interopRequireDefault(require("./PendingNotification"));
+var _SuccessNotification = _interopRequireDefault(require("./SuccessNotification"));
+var _WarningNotification = _interopRequireDefault(require("./WarningNotification"));
+var _UploadFileNotification = _interopRequireDefault(require("./UploadFileNotification"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
