@@ -1,4 +1,4 @@
-import Notifications from "../components/notifications";
+import Notifications from "../components/notifications/NotificationManager";
 
 export const errorSetting = (dismissToastList, t, notification) => {
     if (notification) {

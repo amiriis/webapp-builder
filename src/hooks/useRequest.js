@@ -4,7 +4,7 @@ import {successRequest} from "../utils/succesHandler";
 import {useTranslations} from "next-intl";
 import useUser from "./useUser";
 import useNetwork from "./useNetwork";
-import Notifications from "../components/notifications";
+import Notifications from "../components/notifications/NotificationManager";
 import useToast from "./useToast";
 
 const defaultOptions = {

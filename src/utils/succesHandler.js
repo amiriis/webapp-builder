@@ -1,4 +1,4 @@
-import Notifications from "../components/notifications";
+import Notifications from "../components/notifications/NotificationManager";
 
 export const successRequest = (pushToastList, dismissToastList, response, t, options) => {
     if (options.notification && options.success.notification.show) {
