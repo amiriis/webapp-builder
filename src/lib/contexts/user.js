@@ -73,7 +73,7 @@ export const UserProvider = ({children, url_get_user}) => {
                     headers: {authorization: `Bearer ${state.token}`},
                 })
                 .then(({data}) => {
-                    if (typeof callback === "function") callback(data);
+                    if (typeof callback === "function") callback(data.data);
                 })
                 .catch(error => {
                     if (error.response.status === 401) clearToken()
