@@ -1,11 +1,5 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _react = require("react");
-var _user = require("../contexts/user");
+import { useContext } from 'react';
+import { UserContext } from "../contexts/user";
 const useUser = () => {
   const {
     isAuth,
@@ -19,7 +13,7 @@ const useUser = () => {
     changeLanguageState,
     clearToken,
     setToken
-  } = (0, _react.useContext)(_user.UserContext);
+  } = useContext(UserContext);
   return {
     isAuth,
     userChangedLanguage,
@@ -34,4 +28,4 @@ const useUser = () => {
     setToken
   };
 };
-var _default = exports.default = useUser;
+export default useUser;

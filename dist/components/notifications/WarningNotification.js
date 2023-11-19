@@ -1,40 +1,33 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _Report = _interopRequireDefault(require("@mui/icons-material/Report"));
-var _material = require("@mui/material");
-var _reactToastify = require("react-toastify");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+import ReportIcon from "@mui/icons-material/Report";
+import { Box, Typography } from "@mui/material";
+import { toast } from "react-toastify";
 const WarningNotification = (pushToastList, notificationType, t, status) => {
-  const toastId = (0, _reactToastify.toast)(() => /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_material.Box, {
+  const toastId = toast(() => /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Box, {
     sx: {
       display: "flex",
       flexDirection: "column",
       alignItems: "start",
       justifyContent: "start"
     }
-  }, /*#__PURE__*/React.createElement(_material.Box, {
+  }, /*#__PURE__*/React.createElement(Box, {
     sx: {
       display: "flex",
       alignItems: "center"
     }
-  }, /*#__PURE__*/React.createElement(_Report.default, {
+  }, /*#__PURE__*/React.createElement(ReportIcon, {
     color: "warning",
     sx: {
       mr: 1.6
     }
-  }), /*#__PURE__*/React.createElement(_material.Box, {
+  }), /*#__PURE__*/React.createElement(Box, {
     sx: {
       display: "flex",
       flexDirection: "column"
     }
-  }, /*#__PURE__*/React.createElement(_material.Typography, {
+  }, /*#__PURE__*/React.createElement(Typography, {
     color: "warning.main",
     variant: "button"
-  }, t("notifications.warning"), " (", t("notifications.code"), ":", " ", status, ")"), /*#__PURE__*/React.createElement(_material.Typography, {
+  }, t("notifications.warning"), " (", t("notifications.code"), ":", " ", status, ")"), /*#__PURE__*/React.createElement(Typography, {
     variant: "caption"
   }, t("notifications.warning_static_text")))))), {
     containerId: 'validation',
@@ -44,4 +37,4 @@ const WarningNotification = (pushToastList, notificationType, t, status) => {
   });
   pushToastList(notificationType, toastId);
 };
-var _default = exports.default = WarningNotification;
+export default WarningNotification;

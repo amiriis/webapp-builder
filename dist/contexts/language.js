@@ -1,31 +1,17 @@
-"use strict";
-
-require("core-js/modules/es.weak-map.js");
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.LanguageProvider = exports.LanguageContext = void 0;
-require("core-js/modules/web.dom-collections.iterator.js");
-require("core-js/modules/es.regexp.exec.js");
-require("core-js/modules/es.string.replace.js");
-var _react = _interopRequireWildcard(require("react"));
-var _router = require("next/router");
-var _useUser = _interopRequireDefault(require("../hooks/useUser"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
-function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != typeof e && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && Object.prototype.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
-const LanguageContext = exports.LanguageContext = /*#__PURE__*/(0, _react.createContext)();
-const LanguageProvider = _ref => {
-  let {
-    children,
-    defaultLocalization
-  } = _ref;
-  const router = (0, _router.useRouter)();
+import React, { createContext, useEffect, useState } from 'react';
+import { useRouter } from "next/router";
+import useUser from "../hooks/useUser";
+export const LanguageContext = /*#__PURE__*/createContext();
+export const LanguageProvider = ({
+  children,
+  defaultLocalization
+}) => {
+  const router = useRouter();
   const languageList = [{
     key: "fa",
     dir: "rtl",
     name: "فارسی",
-    fontFamily: "IRANSansFaNum, sans-serif",
+    fontFamily: `IRANSansFaNum, sans-serif`,
     tableLocalization: defaultLocalization['fa'].datatable,
     chartLocalization: defaultLocalization['fa'].chart
   }];
@@ -33,17 +19,17 @@ const LanguageProvider = _ref => {
     user,
     userChangedLanguage,
     changeLanguageState
-  } = (0, _useUser.default)();
-  const [languageIsReady, setLanguageIsReady] = (0, _react.useState)(false);
-  const [languageApp, setLanguageApp] = (0, _react.useState)(process.env.NEXT_PUBLIC_DEFAULT_LANGUAGE);
-  const [directionApp, setDirectionApp] = (0, _react.useState)(process.env.NEXT_PUBLIC_DEFAULT_DIRECTION);
-  (0, _react.useEffect)(() => {
+  } = useUser();
+  const [languageIsReady, setLanguageIsReady] = useState(false);
+  const [languageApp, setLanguageApp] = useState(process.env.NEXT_PUBLIC_DEFAULT_LANGUAGE);
+  const [directionApp, setDirectionApp] = useState(process.env.NEXT_PUBLIC_DEFAULT_DIRECTION);
+  useEffect(() => {
     const lang = localStorage.getItem("_language");
     if (lang) {
       setLanguageApp(lang);
     }
   }, []);
-  (0, _react.useEffect)(() => {
+  useEffect(() => {
     if (!languageApp) return;
     const lang = localStorage.getItem("_language");
     if (!lang) {
@@ -54,7 +40,7 @@ const LanguageProvider = _ref => {
       }
     }
   }, [languageApp]);
-  (0, _react.useEffect)(() => {
+  useEffect(() => {
     if (!router.isReady) return;
     if (user.user_language) {
       if (user.user_language !== languageApp) {
@@ -84,7 +70,7 @@ const LanguageProvider = _ref => {
       clearTimeout(timer);
     };
   }, [router.locale, router.isReady, userChangedLanguage, languageApp]);
-  return /*#__PURE__*/_react.default.createElement(LanguageContext.Provider, {
+  return /*#__PURE__*/React.createElement(LanguageContext.Provider, {
     value: {
       languageApp,
       setLanguageApp,
@@ -95,4 +81,3 @@ const LanguageProvider = _ref => {
     }
   }, children);
 };
-exports.LanguageProvider = LanguageProvider;

@@ -1,25 +1,18 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _react = require("react");
-var _contexts = require("../contexts");
-var _useUser = _interopRequireDefault(require("./useUser"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+import { useContext } from 'react';
+import { LanguageContext } from "../contexts";
+import useUser from "./useUser";
 const useLanguage = () => {
   const {
     isAuth,
     changeUserLanguage
-  } = (0, _useUser.default)();
+  } = useUser();
   const {
     languageApp,
     setLanguageApp,
     languageIsReady,
     setLanguageIsReady,
     languageList
-  } = (0, _react.useContext)(_contexts.LanguageContext);
+  } = useContext(LanguageContext);
   const changeLanguage = lang => {
     if (lang === languageApp) return;
     setLanguageIsReady(false);
@@ -35,4 +28,4 @@ const useLanguage = () => {
     languageList
   };
 };
-var _default = exports.default = useLanguage;
+export default useLanguage;
