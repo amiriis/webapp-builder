@@ -1,6 +1,7 @@
 {
   "name": "@witel/webapp-builder",
-  "version": "0.0.19",
+  "version": "0.0.20",
+  "private": false,
   "description": "",
   "main": "index.js",
   "module": "index.js",
@@ -53,8 +54,5 @@
     "url-loader": "^4.1.1",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
-  },
-  "dependencies": {
-    "@witel/webapp-builder": "^0.0.16"
   }
 }
