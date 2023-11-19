@@ -1,9 +1,15 @@
-import { useContext } from 'react';
-import { ToastContext } from "../contexts/toast";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _react = require("react");
+var _toast = require("../contexts/toast");
 const useToast = () => {
   const {
     dispatch
-  } = useContext(ToastContext);
+  } = (0, _react.useContext)(_toast.ToastContext);
   const pushToastList = (toast_type, toast_id) => {
     dispatch({
       type: "PUSH",
@@ -22,4 +28,4 @@ const useToast = () => {
     dismissToastList
   };
 };
-export default useToast;
+var _default = exports.default = useToast;

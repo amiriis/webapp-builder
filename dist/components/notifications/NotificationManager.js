@@ -1,25 +1,32 @@
-import pendingNotification from "./PendingNotification";
-import WarningNotification from "./WarningNotification";
-import ErrorNotification from "./ErrorNotification";
-import SuccessNotification from "./SuccessNotification";
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _PendingNotification = _interopRequireDefault(require("./PendingNotification"));
+var _WarningNotification = _interopRequireDefault(require("./WarningNotification"));
+var _ErrorNotification = _interopRequireDefault(require("./ErrorNotification"));
+var _SuccessNotification = _interopRequireDefault(require("./SuccessNotification"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const NotificationsManager = (pushToastList, notificationType, t, status, message) => {
   switch (notificationType) {
     case "pending":
-      pendingNotification(pushToastList, notificationType, t);
+      (0, _PendingNotification.default)(pushToastList, notificationType, t);
       break;
     case "warning":
-      WarningNotification(pushToastList, notificationType, t, status);
+      (0, _WarningNotification.default)(pushToastList, notificationType, t, status);
       break;
     case "error":
       if (message) {
-        ErrorNotification(pushToastList, notificationType, t, status, message);
+        (0, _ErrorNotification.default)(pushToastList, notificationType, t, status, message);
       } else {
-        ErrorNotification(pushToastList, notificationType, t, status);
+        (0, _ErrorNotification.default)(pushToastList, notificationType, t, status);
       }
       break;
     case "success":
-      SuccessNotification(pushToastList, notificationType, t, status);
+      (0, _SuccessNotification.default)(pushToastList, notificationType, t, status);
       break;
   }
 };
-export default NotificationsManager;
+var _default = exports.default = NotificationsManager;
