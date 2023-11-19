@@ -1,6 +1,6 @@
 {
   "name": "@witel/webapp-builder",
-  "version": "0.0.29",
+  "version": "0.1.0",
   "description": "",
   "private": false,
   "main": "dist/index.js",
@@ -10,7 +10,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "del /q dist && babel src/lib --out-dir dist --copy-files",
+    "build": "if exist dist (rd /s /q dist && babel src --out-dir dist --copy-files) else (babel src --out-dir dist --copy-files)",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "babel": {
