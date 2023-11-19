@@ -1,6 +1,6 @@
 {
   "name": "@witel/webapp-builder",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "",
   "main": "index.js",
   "module": "index.js",
@@ -9,7 +9,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "babel src/lib --out-dir dist --copy-files --source-maps && babel exports.js --out-file index.js --source-maps",
+    "build": "babel src/lib --out-dir dist --copy-files && babel exports.js --out-file index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "babel": {
@@ -40,6 +40,7 @@
   "devDependencies": {
     "@babel/cli": "^7.23.0",
     "@babel/core": "^7.23.3",
+    "@babel/plugin-transform-react-jsx": "^7.22.15",
     "@babel/plugin-transform-runtime": "^7.23.3",
     "@babel/preset-env": "^7.23.3",
     "@babel/preset-react": "^7.23.3",
