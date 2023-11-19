@@ -1,11 +1,11 @@
 {
   "name": "@witel/webapp-builder",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "",
-  "private": false,
   "main": "index.js",
   "module": "index.js",
   "files": [
+    "dist",
     "README.md"
   ],
   "scripts": {
@@ -26,8 +26,8 @@
   "peerDependencies": {
     "@mui/icons-material": "^5.14.18",
     "@mui/material": "^5.14.18",
-    "core-js": "^3.33.2",
     "axios": "^1.6.2",
+    "core-js": "^3.33.2",
     "material-react-table": "^1.11.1",
     "moment-jalaali": "^0.10.0",
     "next": "^13.3.0",
@@ -53,5 +53,8 @@
     "url-loader": "^4.1.1",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@witel/webapp-builder": "^0.0.16"
   }
 }
