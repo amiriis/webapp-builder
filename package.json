@@ -9,7 +9,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "babel src/lib --out-dir dist --copy-files && babel exports.js --out-file index.js",
+    "build": "babel src/lib --out-dir dist --copy-files --source-maps && babel exports.js --out-file index.js --source-maps",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "babel": {

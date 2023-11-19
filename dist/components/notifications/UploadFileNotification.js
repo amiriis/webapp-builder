@@ -50,3 +50,4 @@ const UploadFileNotification = t => {
   });
 };
 var _default = exports.default = UploadFileNotification;
+//# sourceMappingURL=UploadFileNotification.js.map

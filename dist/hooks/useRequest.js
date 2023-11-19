@@ -94,3 +94,4 @@ const useRequest = initOptions => {
   return requestServer;
 };
 var _default = exports.default = useRequest;
+//# sourceMappingURL=useRequest.js.map

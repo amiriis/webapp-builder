@@ -96,3 +96,4 @@ const LanguageProvider = _ref => {
   }, children);
 };
 exports.LanguageProvider = LanguageProvider;
+//# sourceMappingURL=language.js.map

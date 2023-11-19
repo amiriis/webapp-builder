@@ -195,3 +195,4 @@ function DataTable(props) {
   }, props));
 }
 var _default = exports.default = DataTable;
+//# sourceMappingURL=DataTable.js.map

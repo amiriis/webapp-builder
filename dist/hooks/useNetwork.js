@@ -39,3 +39,4 @@ function useNetwork() {
   return state;
 }
 var _default = exports.default = useNetwork;
+//# sourceMappingURL=useNetwork.js.map

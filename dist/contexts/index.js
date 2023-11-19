@@ -36,3 +36,4 @@ Object.keys(_language).forEach(function (key) {
     }
   });
 });
+//# sourceMappingURL=index.js.map
