@@ -113,7 +113,7 @@ const UserProvider = _ref => {
       let {
         data
       } = _ref2;
-      if (typeof callback === "function") callback(data);
+      if (typeof callback === "function") callback(data.data);
     }).catch(error => {
       if (error.response.status === 401) clearToken();
     });
