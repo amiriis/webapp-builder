@@ -1,4 +1,4 @@
-import {createContext, useReducer} from "react";
+import React, {createContext, useReducer} from 'react'
 import {toast} from "react-toastify";
 
 export const ToastContext = createContext()
