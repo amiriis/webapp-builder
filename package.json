@@ -1,6 +1,6 @@
 {
   "name": "@witel/webapp-builder",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "",
   "private": false,
   "main": "index.js",
