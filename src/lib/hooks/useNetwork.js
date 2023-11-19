@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useEffect, useState} from 'react';
 
 function useNetwork() {
     const [state, setState] = useState(() => {

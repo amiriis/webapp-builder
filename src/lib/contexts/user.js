@@ -1,5 +1,5 @@
+import React, {createContext, useCallback, useEffect, useReducer} from 'react';
 import axios from "axios";
-import {createContext, useCallback, useEffect, useReducer} from "react";
 
 const initialUser = {
     isAuth: false,

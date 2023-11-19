@@ -1,5 +1,5 @@
+import React, {createContext, useEffect, useState} from 'react';
 import {useRouter} from "next/router";
-import {createContext, useEffect, useState} from "react";
 import useUser from "../hooks/useUser";
 
 export const LanguageContext = createContext();

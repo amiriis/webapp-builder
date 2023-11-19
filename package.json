@@ -1,16 +1,15 @@
 {
   "name": "@witel/webapp-builder",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "",
   "private": false,
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "index.js",
+  "module": "index.js",
   "files": [
-    "dist",
     "README.md"
   ],
   "scripts": {
-    "build": "babel src --out-dir dist --copy-files",
+    "build": "babel src/lib --out-dir dist --copy-files && babel exports.js --out-file index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "babel": {

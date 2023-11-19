@@ -1,6 +1,6 @@
+import React, {useEffect, useMemo, useState} from 'react';
 import {useTranslations} from "next-intl";
 import useLanguage from "../hooks/useLanguage";
-import {useEffect, useMemo, useState} from "react";
 import moment from "moment-jalaali";
 import useSWR from "swr";
 import {Typography} from "@mui/material";
