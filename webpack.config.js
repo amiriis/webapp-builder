@@ -1,9 +1,9 @@
 const path = require('path');
 
 module.exports = {
-    entry: './src/index.js', // فایل ورودی اصلی پکیج شما
+    entry: './src/contexts/toast.js', // فایل ورودی اصلی پکیج شما
     output: {
-        filename: 'bundle.js', // نام فایل خروجی
+        filename: 'toast.js', // نام فایل خروجی
         path: path.resolve(__dirname, 'dist'), // مسیر فایل خروجی
     },
     module: {
