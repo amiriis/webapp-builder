@@ -1,3 +1,1 @@
-import * as User from './user'
-
-export {User}
+export * from './toast'

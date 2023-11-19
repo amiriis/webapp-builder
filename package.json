@@ -1,65 +1,25 @@
 {
-  "name": "@witel/webapp-builder",
-  "version": "0.1.1",
+  "name": "webapp-builder",
+  "version": "0.2.0",
   "description": "",
-  "private": false,
-  "main": "dist/index.js",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js"
-    }
-  },
+  "main": "dist/index.umd.js",
+  "module": "dist/index.mjs",
   "files": [
-    "dist",
-    "README.md"
+    "dist"
   ],
   "scripts": {
-    "build": "if exist dist (rd /s /q dist && babel src --out-dir dist --copy-files) else (babel src --out-dir dist --copy-files)",
+    "build": "vite build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "babel": {
-    "presets": [
-      "@babel/preset-react"
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:amiriis/webapp-builder.git"
-  },
-  "author": "Amirhossein Mahmoodi",
+  "author": "",
   "license": "ISC",
-  "peerDependencies": {
-    "@mui/icons-material": "^5.14.18",
-    "@mui/material": "^5.14.18",
-    "axios": "^1.6.2",
-    "core-js": "^3.33.2",
-    "material-react-table": "^1.11.1",
-    "moment-jalaali": "^0.10.0",
-    "next": "^13.3.0",
-    "next-intl": "^2.13.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-toastify": "^9.1.3",
-    "swr": "^2.2.4"
-  },
   "devDependencies": {
-    "@babel/cli": "^7.23.0",
-    "@babel/core": "^7.23.3",
-    "@babel/plugin-transform-runtime": "^7.23.3",
-    "@babel/preset-env": "^7.23.3",
-    "@babel/preset-react": "^7.23.3",
-    "@babel/preset-typescript": "^7.23.3",
-    "@babel/runtime": "^7.23.2",
-    "babel-loader": "^9.1.3",
-    "core-js": "^3.33.2",
-    "css-loader": "^6.8.1",
-    "file-loader": "^6.2.0",
-    "style-loader": "^3.3.3",
-    "url-loader": "^4.1.1",
-    "webpack": "^5.89.0",
-    "webpack-cli": "^5.1.4"
+    "react": "^18.2.0",
+    "react-toastify": "^9.1.3",
+    "vite": "^5.0.0"
   },
-  "dependencies": {
-    "@babel/polyfill": "^7.12.1"
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-toastify": "^9.1.3"
   }
 }

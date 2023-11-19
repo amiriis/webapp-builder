@@ -32,3 +32,4 @@ cypress/screenshots
 .idea
 package-lock.json
 ecosystem.config.js
+dist
