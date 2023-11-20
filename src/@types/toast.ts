@@ -23,6 +23,6 @@ export interface IToastContext {
 
 export interface IToastAction {
     type: IToastActionKind;
-    toast_type: IToastTypeKind
-    toast_id: string
+
+    [key: string]: any
 }

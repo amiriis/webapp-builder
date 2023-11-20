@@ -2,8 +2,12 @@ import React, {createContext, useReducer} from "react";
 import {toast} from "react-toastify";
 import {IToastAction, IToastActionKind, IToastContext, IToastState} from "../../@types/toast";
 
-export const ToastContext = createContext<IToastContext | undefined>(undefined)
-
+const initialState: IToastState = {
+    pending: [],
+    error: [],
+    warning: [],
+    success: []
+}
 const reducer = (state: IToastState, action: IToastAction) => {
     switch (action.type) {
         case IToastActionKind.PUSH:
@@ -22,12 +26,7 @@ const reducer = (state: IToastState, action: IToastAction) => {
     }
 };
 
-const initialState: IToastState = {
-    pending: [],
-    error: [],
-    warning: [],
-    success: []
-}
+export const ToastContext = createContext<IToastContext | undefined>(undefined)
 
 export const ToastProvider: React.FC<React.PropsWithChildren<{}>> = ({children}) => {
     const [state, dispatch] = useReducer(reducer, initialState);
