@@ -1,7 +1,7 @@
 import {useRouter} from "next/router";
 import React, {createContext, useEffect, useState} from "react";
-import useUser from "../../hooks/useUser";
 import {ILanguageContext, ILanguageDefaultValues} from "../../@types/language";
+import {useUser} from "../../hooks";
 
 export const LanguageContext = createContext<ILanguageContext | undefined>(undefined)
 
