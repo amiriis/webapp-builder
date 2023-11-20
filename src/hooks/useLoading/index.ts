@@ -5,7 +5,7 @@ import {ILoadingContext} from "../../@types/loading";
 interface IUseLoading extends ILoadingContext {
 }
 
-const useLoading = (): IUseLoading => {
+export const useLoading = (): IUseLoading => {
     const context = useContext(LoadingContext);
 
     if (!context) {
@@ -16,5 +16,3 @@ const useLoading = (): IUseLoading => {
         ...context,
     }
 };
-
-export default useLoading;

@@ -5,7 +5,7 @@ interface IUseDirection {
     directionApp: string,
 }
 
-const useDirection = (): IUseDirection => {
+export const useDirection = (): IUseDirection => {
     const context = useContext(LanguageContext);
 
     if (!context) {
@@ -14,5 +14,3 @@ const useDirection = (): IUseDirection => {
 
     return {directionApp: context.directionApp};
 };
-
-export default useDirection;

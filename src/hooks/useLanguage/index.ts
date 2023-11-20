@@ -1,13 +1,13 @@
 import {useContext} from "react";
-import useUser from "../useUser";
 import {ILanguageContext} from "../../@types/language";
 import {LanguageContext} from "../../contexts";
+import {useUser} from "../useUser";
 
 interface IUseLanguage extends ILanguageContext {
     changeLanguage: (lang: string) => void,
 }
 
-const useLanguage = (): IUseLanguage => {
+export const useLanguage = (): IUseLanguage => {
     const {isAuth, changeUserLanguage} = useUser();
     const context = useContext(LanguageContext);
 
@@ -27,5 +27,3 @@ const useLanguage = (): IUseLanguage => {
 
     return {...context, changeLanguage};
 };
-
-export default useLanguage;

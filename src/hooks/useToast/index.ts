@@ -7,7 +7,7 @@ interface IUseToast extends IToastContext {
     dismissToastList: (toast_type: string) => void,
 }
 
-const useToast = (): IUseToast => {
+export const useToast = (): IUseToast => {
     const context = useContext(ToastContext);
 
     if (!context) {
@@ -28,5 +28,3 @@ const useToast = (): IUseToast => {
         dismissToastList
     }
 };
-
-export default useToast;

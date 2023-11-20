@@ -6,7 +6,7 @@ interface IUseUser extends IUserContext {
 
 }
 
-const useUser = (): IUseUser => {
+export const useUser = (): IUseUser => {
     const context = useContext(UserContext);
 
     if (!context) {
@@ -15,5 +15,3 @@ const useUser = (): IUseUser => {
 
     return {...context};
 };
-
-export default useUser;
