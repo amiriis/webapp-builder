@@ -1,8 +1,8 @@
 import {useContext} from "react";
 import {SocketContext} from "../../contexts";
-import {ISocketContext} from "../../@types/socket";
+import {Socket} from "socket.io-client";
 
-interface IUseSocket extends ISocketContext {
+interface IUseSocket extends Socket {
 }
 
 const useSocket = (): IUseSocket => {
@@ -12,7 +12,7 @@ const useSocket = (): IUseSocket => {
         throw new Error("useSocket must be used within a SocketProvider");
     }
 
-    return context
+    return context.socket
 }
 
 export default useSocket
