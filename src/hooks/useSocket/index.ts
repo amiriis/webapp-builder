@@ -5,7 +5,7 @@ import {Socket} from "socket.io-client";
 interface IUseSocket extends Socket {
 }
 
-const useSocket = (): IUseSocket => {
+export const useSocket = (): IUseSocket => {
     const context = useContext(SocketContext)
 
     if (!context) {
@@ -14,5 +14,3 @@ const useSocket = (): IUseSocket => {
 
     return context.socket
 }
-
-export default useSocket

@@ -1,10 +1,10 @@
 import axios from "axios";
 import {useTranslations} from "next-intl";
-import useNetwork from "../useNetwork";
 import {useUser} from "../useUser";
 import {useToast} from "../useToast";
 import NotificationManager from "../../components/notifications/notificationManager";
 import {errorRequest, errorResponse, errorSetting, successRequest} from "../../utils";
+import {useNetwork} from "../useNetwork";
 
 const defaultOptions = {
     auth: false, data: {}, requestOptions: {
@@ -19,7 +19,7 @@ const defaultOptions = {
         },
     },
 }
-const useRequest = (initOptions: any) => {
+export const useRequest = (initOptions: any) => {
     const network = useNetwork()
     const t = useTranslations()
     const {token, clearToken} = useUser()
@@ -66,5 +66,3 @@ const useRequest = (initOptions: any) => {
 
     return requestServer
 }
-
-export default useRequest

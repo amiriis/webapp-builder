@@ -5,7 +5,7 @@ import {NetworkContext} from "../../contexts/network";
 interface IUseNetwork extends INetworkContext {
 }
 
-const useNetwork = (): IUseNetwork => {
+export const useNetwork = (): IUseNetwork => {
     const context = useContext(NetworkContext)
 
     if (!context) {
@@ -14,5 +14,3 @@ const useNetwork = (): IUseNetwork => {
 
     return {...context}
 }
-
-export default useNetwork;
