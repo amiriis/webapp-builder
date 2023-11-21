@@ -41,9 +41,11 @@ export interface IUserContext extends IUserState {
     changeUserLanguage: (lang: string) => void,
     changeAuthState: (isAuth: boolean) => void,
     changeLanguageState?: (userChangedLanguage: boolean) => void,
-    clearToken: () => void,
+    clearToken: IUserCleanToken,
     setToken: (token: string | null) => void,
 }
+
+export type IUserCleanToken = () => void
 
 
 export interface IUserAction {

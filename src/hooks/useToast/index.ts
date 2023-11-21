@@ -1,10 +1,10 @@
 import {useContext} from "react";
-import {IToastActionKind, IToastContext} from "../../@types/toast";
+import {IDismissToastList, IPushToastList, IToastActionKind, IToastContext} from "../../@types/toast";
 import {ToastContext} from "../../contexts";
 
 interface IUseToast extends IToastContext {
-    pushToastList: (toast_type: string, toast_id: string | number) => void,
-    dismissToastList: (toast_type: string) => void,
+    pushToastList: IPushToastList,
+    dismissToastList: IDismissToastList,
 }
 
 export const useToast = (): IUseToast => {
@@ -14,11 +14,11 @@ export const useToast = (): IUseToast => {
         throw new Error("useToast must be used within a ToastProvider");
     }
 
-    const pushToastList = (toast_type: string, toast_id: string | number) => {
+    const pushToastList: IPushToastList = (toast_type, toast_id) => {
         context.dispatch({type: IToastActionKind.PUSH, toast_type, toast_id});
     };
 
-    const dismissToastList = (toast_type: string) => {
+    const dismissToastList: IDismissToastList = (toast_type) => {
         context.dispatch({type: IToastActionKind.DISMISS, toast_type});
     };
 

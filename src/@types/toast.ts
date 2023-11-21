@@ -26,3 +26,6 @@ export interface IToastAction {
 
     [key: string]: any
 }
+
+export type IPushToastList = (toast_type: string, toast_id: string | number) => void
+export type IDismissToastList = (toast_type: string[]) => void
