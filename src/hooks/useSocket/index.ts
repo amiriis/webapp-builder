@@ -12,7 +12,7 @@ const useSocket = (): IUseSocket => {
         throw new Error("useSocket must be used within a SocketProvider");
     }
 
-    return {...context}
+    return context
 }
 
 export default useSocket
