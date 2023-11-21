@@ -39,7 +39,7 @@ const reducer = (state: IUserState, action: IUserAction) => {
 
 export const UserContext = createContext<IUserContext | undefined>(undefined)
 
-export const UserProvider: React.FC<React.PropsWithChildren<{ urlGetUser: string, schemaGetUser: (data: object) => object }>> = ({children, urlGetUser, schemaGetUser}) => {
+export const UserProvider: React.FC<React.PropsWithChildren<{ urlGetUser: string, schemaGetUser?: (data: object) => object }>> = ({children, urlGetUser, schemaGetUser}) => {
     const [state, dispatch] = useReducer(reducer, initialUser);
 
     const clearUser = useCallback(() =>
@@ -77,7 +77,9 @@ export const UserProvider: React.FC<React.PropsWithChildren<{ urlGetUser: string
                     headers: {authorization: `Bearer ${state.token}`},
                 })
                 .then(({data}) => {
-                    if (typeof callback === "function") callback(schemaGetUser(data));
+                    if (typeof callback === "function")
+                        callback(schemaGetUser ? schemaGetUser(data) : data);
+
                 })
                 .catch(error => {
                     if (error.response.status === 401) clearToken()
