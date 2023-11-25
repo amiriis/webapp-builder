@@ -1,8 +1,9 @@
 import {useContext} from "react";
 import {LanguageContext} from "../../contexts";
+import {Direction} from "../../@types/language";
 
 interface IUseDirection {
-    directionApp: string,
+    directionApp: Direction,
 }
 
 export const useDirection = (): IUseDirection => {

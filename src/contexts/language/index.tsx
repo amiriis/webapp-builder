@@ -1,6 +1,6 @@
 import {useRouter} from "next/router";
 import React, {createContext, useEffect, useState} from "react";
-import {ILanguageContext, ILanguageDefaultValues} from "../../@types/language";
+import {Direction, ILanguageContext, ILanguageDefaultValues} from "../../@types/language";
 import {useUser} from "../../hooks";
 
 export const LanguageContext = createContext<ILanguageContext | undefined>(undefined)
@@ -13,7 +13,7 @@ export const LanguageProvider: React.FC<React.PropsWithChildren<{
     const languageList = [
         {
             key: "fa",
-            dir: "rtl",
+            dir: Direction.RTL,
             name: "فارسی",
             fontFamily: `IRANSans, sans-serif`,
             tableLocalization: defaultValues.fa.datatable,
@@ -23,7 +23,7 @@ export const LanguageProvider: React.FC<React.PropsWithChildren<{
     const {user, userChangedLanguage, changeLanguageState} = useUser();
     const [languageIsReady, setLanguageIsReady] = useState(false);
     const [languageApp, setLanguageApp] = useState(defaultLanguage);
-    const [directionApp, setDirectionApp] = useState(defaultLanguage);
+    const [directionApp, setDirectionApp] = useState(languageList.find(_lang => _lang.key === defaultLanguage)?.dir || Direction.RTL);
 
     useEffect(() => {
         const lang = localStorage.getItem("_language");

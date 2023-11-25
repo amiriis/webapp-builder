@@ -1,14 +1,22 @@
 import React from "react";
 
+
+export type DirectionType = Direction
+
+export enum Direction {
+    RTL = "rtl",
+    LTR = "ltr"
+}
+
 export interface ILanguageContext {
     languageApp: string,
     setLanguageApp: React.Dispatch<React.SetStateAction<string>>,
-    directionApp: string,
+    directionApp: DirectionType,
     languageIsReady: boolean,
     setLanguageIsReady: React.Dispatch<React.SetStateAction<boolean>>,
     languageList: {
         key: string;
-        dir: string;
+        dir: DirectionType;
         name: string;
         fontFamily: string;
         tableLocalization: any;
