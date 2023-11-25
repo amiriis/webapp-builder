@@ -39,7 +39,6 @@ export const SocketProvider: React.FC<React.PropsWithChildren<{ urlServerSocket:
     }, []);
 
     useEffect(() => {
-        console.log(socketToastId.current)
         if (!connectionError) {
             toast.update(socketToastId.current, {
                 type: toast.TYPE.SUCCESS,
