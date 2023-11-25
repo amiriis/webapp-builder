@@ -3,11 +3,14 @@ import React, {ReactNode, useEffect} from "react";
 import {useLanguage, useLoading, useUser} from "../../hooks";
 import {useTheme} from "@mui/material/styles";
 
-export const AppLayout: React.FC<React.PropsWithChildren<{ isBot: boolean, headComponent: ReactNode }>> = ({
-                                                                                                               children,
-                                                                                                               isBot,
-                                                                                                               headComponent
-                                                                                                           }) => {
+export const AppLayout: React.FC<React.PropsWithChildren<{
+    isBot: boolean,
+    headComponent: ReactNode | (() => ReactNode)
+}>> = ({
+           children,
+           isBot,
+           headComponent
+       }) => {
     const theme = useTheme()
     const {languageIsReady} = useLanguage();
     const {setLoadingPage} = useLoading();
@@ -40,7 +43,7 @@ export const AppLayout: React.FC<React.PropsWithChildren<{ isBot: boolean, headC
 
     return (
         <>
-            {headComponent}
+            {typeof headComponent === "function" ? headComponent() : headComponent}
             <NextNProgress
                 color={theme.palette.secondary.dark}
                 options={{showSpinner: false}}
