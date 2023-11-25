@@ -2,7 +2,6 @@ import React, {createContext, useReducer} from "react";
 import {toast, ToastContainer} from "react-toastify";
 import {IToastAction, IToastActionKind, IToastContext, IToastState} from "../../@types/toast";
 import {useDirection} from "../../hooks";
-import "react-toastify/dist/ReactToastify.css";
 
 const initialState: IToastState = {
     pending: [],
@@ -18,13 +17,14 @@ const reducer = (state: IToastState, action: IToastAction) => {
                 [action.toast_type]: [...state[action.toast_type], action.toast_id]
             };
         case IToastActionKind.DISMISS:
+            const dismissedState = {...state};
             for (const item of action.toast_type) {
-                state[item].map((id) => {
+                dismissedState[item] = [];
+                state[item].forEach((id) => {
                     toast.dismiss(id);
-                })
-                state[item] = []
+                });
             }
-            return state;
+            return dismissedState;
     }
 };
 
