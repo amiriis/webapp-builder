@@ -7,29 +7,28 @@ import {useDirection} from "../../hooks";
 import React from "react";
 import {NoSsrHandler} from "../../components";
 import {AtLeastOne} from "../../@types/atLeastOne";
+import {createEmotionCacheLtr, createEmotionCacheRtl} from "../../utils";
 
-
+const clientSideEmotionCacheRtl = createEmotionCacheRtl();
+const clientSideEmotionCacheLtr = createEmotionCacheLtr();
 export const MuiLayout: React.FC<React.PropsWithChildren<{
-    clientSideEmotionCaches: AtLeastOne<{ rtl?: any, ltr?: any }>
     themes: AtLeastOne<{ rtl?: any, ltr?: any }>,
     isBot?: boolean
 }>> = ({
            children,
-           clientSideEmotionCaches,
            themes,
            isBot = false
        }) => {
     const {directionApp} = useDirection()
-    const emotionCache = directionApp === "rtl" ? clientSideEmotionCaches.rtl() : clientSideEmotionCaches.ltr()
-    const theme = directionApp === "rtl" ? themes.rtl : themes.ltr;
+    const theme = directionApp === "rtl" ? themes.rtl : themes.ltr
 
     return (
         <NoSsrHandler isBot={isBot}>
-            <CacheProvider value={emotionCache}>
+            <CacheProvider value={directionApp === "rtl" ? clientSideEmotionCacheRtl : clientSideEmotionCacheLtr}>
                 <Head>
                     <meta name="viewport" content="initial-scale=1, width=device-width"/>
                 </Head>
-                <ThemeProvider theme={theme}>
+                <ThemeProvider theme={directionApp === "rtl" ? themes.rtl : themes.ltr}>
                     <GlobalStyles
                         styles={{
                             "*::-webkit-scrollbar": {
