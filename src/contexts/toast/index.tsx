@@ -2,6 +2,7 @@ import React, {createContext, useReducer} from "react";
 import {toast, ToastContainer} from "react-toastify";
 import {IToastAction, IToastActionKind, IToastContext, IToastState} from "../../@types/toast";
 import {useDirection} from "../../hooks";
+import "react-toastify/dist/ReactToastify.css";
 
 const initialState: IToastState = {
     pending: [],
@@ -32,7 +33,7 @@ export const ToastContext = createContext<IToastContext | undefined>(undefined)
 export const ToastProvider: React.FC<React.PropsWithChildren<{}>> = ({children}) => {
     const [state, dispatch] = useReducer(reducer, initialState);
     const {directionApp} = useDirection()
-    
+
     return (
         <ToastContext.Provider value={{state, dispatch}}>
             <ToastContainer
