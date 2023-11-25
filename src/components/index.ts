@@ -1,4 +1,5 @@
 export * from './message'
 export * from './middlewares'
+export * from './noSsrHandler'
 export * from './notifications'
 export * from './svgs'
