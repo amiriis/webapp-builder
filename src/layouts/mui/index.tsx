@@ -20,8 +20,8 @@ export const MuiLayout: React.FC<React.PropsWithChildren<{
            isBot = false
        }) => {
     const {directionApp} = useDirection()
-    const emotionCache = directionApp == 'rtl' ? clientSideEmotionCaches.rtl() : clientSideEmotionCaches.ltr()
-    const theme = directionApp == 'rtl' ? themes.rtl : themes.ltr;
+    const emotionCache = directionApp === "rtl" ? clientSideEmotionCaches.rtl() : clientSideEmotionCaches.ltr()
+    const theme = directionApp === "rtl" ? themes.rtl : themes.ltr;
 
     return (
         <NoSsrHandler isBot={isBot}>
