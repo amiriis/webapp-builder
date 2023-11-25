@@ -4,17 +4,19 @@ import {useTranslations} from "next-intl";
 import {Id, toast} from "react-toastify";
 import PowerIcon from "@mui/icons-material/Power";
 import PowerOffIcon from "@mui/icons-material/PowerOff";
-import {useDirection, useUser} from "../../hooks";
+import {useUser} from "../../hooks";
 import {ClientToServerEvents, ISocketContext, ServerToClientEvents} from "../../@types/socket";
 
 export const SocketContext = createContext<ISocketContext | undefined>(undefined)
 
-export const SocketProvider: React.FC<React.PropsWithChildren<{ urlServerSocket: string }>> = ({children, urlServerSocket}) => {
+export const SocketProvider: React.FC<React.PropsWithChildren<{ urlServerSocket: string }>> = ({
+                                                                                                   children,
+                                                                                                   urlServerSocket
+                                                                                               }) => {
     const {user, isAuth} = useUser()
     const [connectionError, setConnectionError] = useState(false)
     const socketToastId: React.MutableRefObject<Id> = useRef(0);
     const t = useTranslations()
-    const {directionApp} = useDirection();
     const socket: Socket<ServerToClientEvents, ClientToServerEvents> = useMemo(() => io(urlServerSocket, {
         autoConnect: false,
         auth: {

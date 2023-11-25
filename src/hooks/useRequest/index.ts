@@ -23,7 +23,7 @@ export const useRequest = (initOptions: any) => {
     const network = useNetwork()
     const t = useTranslations()
     const {token, clearToken} = useUser()
-    const {state, pushToastList, dismissToastList} = useToast();
+    const {pushToastList, dismissToastList} = useToast();
     let _options = {...defaultOptions, ...initOptions}
 
     function requestServer(url = '', method = 'get', options: any) {
