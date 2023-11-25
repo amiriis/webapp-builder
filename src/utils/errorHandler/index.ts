@@ -4,18 +4,18 @@ import NotificationManager from "../../components/notifications/notificationMana
 
 export const errorSetting = (dismissToastList: IDismissToastList, t: any, notification: boolean) => {
     if (notification) {
-        dismissToastList(["pending", "warning", "error", "success"])
+        dismissToastList(["warning", "error", "success"])
     }
 }
 export const errorRequest = (dismissToastList: IDismissToastList, t: any, notification: boolean) => {
     if (notification) {
-        dismissToastList(["pending", "warning", "error", "success"])
+        dismissToastList(["warning", "error", "success"])
     }
 }
 
 export const errorResponse = (pushToastList: IPushToastList, dismissToastList: IDismissToastList, response: any, clearToken: IUserCleanToken, t: any, notification: boolean) => {
     if (notification) {
-        dismissToastList(["pending", "warning", "error", "success"])
+        dismissToastList(["warning", "error", "success"])
     }
     if (isServerError(response.status)) {
         errorServer(pushToastList, response, t, notification)

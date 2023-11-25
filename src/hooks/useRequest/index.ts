@@ -60,7 +60,9 @@ export const useRequest = (initOptions: any) => {
                         errorSetting(dismissToastList, t, _options.notification && _options.failed.notification.show)
                     }
                     reject(error)
-                })
+                }).finally(() => {
+                dismissToastList(['pending'])
+            })
         });
     }
 
