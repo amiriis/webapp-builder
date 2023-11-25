@@ -60,7 +60,7 @@ const errorValidation = (pushToastList: IPushToastList, response: any, t: any, n
         const errorsMap = Object.keys(response.data.errors)
         const errorsArray = response.data.errors
 
-        errorsMap.map((item, index) => {
+        errorsMap.map((item) => {
             NotificationManager(pushToastList, "error", t, response.status, errorsArray[item][0]);
         })
     }
