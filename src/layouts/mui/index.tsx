@@ -6,13 +6,12 @@ import Head from "next/head";
 import {useDirection} from "../../hooks";
 import React from "react";
 import {NoSsrHandler} from "../../components";
-import {AtLeastOne} from "../../@types/atLeastOne";
 import {createEmotionCacheLtr, createEmotionCacheRtl} from "../../utils";
 
 const clientSideEmotionCacheRtl = createEmotionCacheRtl();
 const clientSideEmotionCacheLtr = createEmotionCacheLtr();
 export const MuiLayout: React.FC<React.PropsWithChildren<{
-    themes: AtLeastOne<{ rtl?: any, ltr?: any }>,
+    themes: { rtl?: any, ltr?: any },
     isBot?: boolean
 }>> = ({
            children,
@@ -21,6 +20,7 @@ export const MuiLayout: React.FC<React.PropsWithChildren<{
        }) => {
     const {directionApp} = useDirection()
     const theme = directionApp === "rtl" ? themes.rtl : themes.ltr
+    console.log(theme)
 
     return (
         <NoSsrHandler isBot={isBot}>
