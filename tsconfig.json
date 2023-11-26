@@ -12,11 +12,6 @@
     "declarationDir": "dist",
     "outDir": "dist",
     "jsx": "react",
-    "paths": {
-      "~/*": [
-        "*"
-      ]
-    }
   },
   "include": [
     "src/**/*.ts",

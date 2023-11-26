@@ -10,7 +10,7 @@ export const WithoutAuthMiddleware: React.FC<React.PropsWithChildren<{ defaultUr
     const {isAuth} = useUser();
     const router = useRouter();
 
-    const backUrlDecodedPath = router.query?.back_url;
+    const backUrlDecodedPath = router.query?.back_url as string;
 
     useEffect(() => {
         if (!isAuth) return;
