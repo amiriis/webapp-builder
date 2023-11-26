@@ -7,6 +7,7 @@ export const LayoutManager: React.FC<React.PropsWithChildren<{ layout: ILayoutIn
     const [layoutList, setLayoutList] = useState<any | null>(null);
 
     useEffect(() => {
+        console.log(rootApp)
         const importLayoutList = async () => {
             const module = await import(rootApp);
             setLayoutList(module);
