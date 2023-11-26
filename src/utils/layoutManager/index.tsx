@@ -3,8 +3,9 @@ import {ILayoutInput} from "../../@types/layout";
 
 let layoutList: any = {}
 try {
-    console.log('appDir', __dirname)
-    layoutList = require(__dirname + '/src/layouts/list');
+    const rootApp = require('app-root-path').require;
+    console.log('rootApp', rootApp)
+    layoutList = require(rootApp + '/src/layouts/list');
     console.log('start:', layoutList)
 } catch (error) {
 }
