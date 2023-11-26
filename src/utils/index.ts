@@ -1,5 +1,4 @@
 export * from './createEmotionCache'
 export * from './errorHandler'
-export * from './layoutManager'
 export * from './linkRouting'
 export * from './successHandler'
