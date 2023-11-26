@@ -4,11 +4,11 @@ import {require as rootApp} from "app-root-path";
 
 let layoutList: any = {}
 try {
-    const rootApp = require('app-root-path').require;
     console.log('rootApp', rootApp)
     layoutList = rootApp('/src/layouts/list');
     console.log('start:', layoutList)
 } catch (error) {
+    console.log(error)
 }
 
 export const LayoutManager: React.FC<React.PropsWithChildren<{ layout: ILayoutInput }>> = ({children, layout}) => {
