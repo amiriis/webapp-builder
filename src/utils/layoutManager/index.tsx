@@ -1,13 +1,15 @@
 import React, {Fragment} from "react";
 import {ILayoutInput} from "../../@types/layout";
-import {require as rootApp} from "app-root-path";
+import {resolve} from "app-root-path";
 
 let layoutList: any = {}
 try {
+    const rootApp = resolve('/src/layouts/list')
     console.log('rootApp', rootApp)
-    layoutList = rootApp('/src/layouts/list');
-    console.log('start:', layoutList)
+    // layoutList = rootApp('/src/layouts/list');
+    // console.log('start:', layoutList)
 } catch (error) {
+    console.log('error1')
     console.log(error)
 }
 
