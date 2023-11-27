@@ -1,15 +1,15 @@
 import * as path from "path";
 
-const jsonFilePath = path.resolve(__dirname, 'witel.config.json');
+const jsonFilePath = path.resolve('@/../witel.config.json');
 
 console.log(jsonFilePath)
-
-try {
-    global.WitelConfig = require(jsonFilePath);
-    console.log(WitelConfig)
-} catch (error) {
-    console.error('Error loading layoutList:', error);
-}
+//
+// try {
+//     global.WitelConfig = require(jsonFilePath);
+//     console.log(WitelConfig)
+// } catch (error) {
+//     console.error('Error loading layoutList:', error);
+// }
 
 export * from './components'
 export * from './contexts'
