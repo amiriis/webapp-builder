@@ -1,6 +1,6 @@
 import * as path from "path";
 
-const jsonFilePath = path.resolve('#/witel.config.json');
+const jsonFilePath = path.resolve('$/witel.config.json');
 
 try {
     global.WitelConfig = require(jsonFilePath);
