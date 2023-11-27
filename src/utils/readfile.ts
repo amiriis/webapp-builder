@@ -1,6 +1,6 @@
 import {resolve} from 'app-root-path'
 
-let list
+let list: any
 try {
     list = require(resolve('src/core/data/sidebarMenu'));
 } catch (error) {
@@ -8,4 +8,9 @@ try {
     console.error('Error loading layoutList:', error);
 }
 
-console.log(list)
+const ReadFile = () => {
+    console.log(list)
+
+}
+
+export default ReadFile
