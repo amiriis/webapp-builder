@@ -14,6 +14,7 @@ import {useTranslations} from "next-intl";
 import React from "react";
 import {NextLinkComposed} from "../../../../../../../utils";
 import {SidebarListActionEnum, SidebarListItemProps} from "../../../../../../../@types/dashboard";
+import SidebarListSubItem from "./sidebarListSubItem";
 
 const SidebarListItem: React.FC<SidebarListItemProps> = (props) => {
     const t = useTranslations();
@@ -84,10 +85,7 @@ const SidebarListItem: React.FC<SidebarListItemProps> = (props) => {
                 </ListItemButton>
             </ListItem>
             {props.item.subItem && (
-                <SidebarListSubItem
-                    item={props.item}
-                    handleDrawerToggle={props.handleDrawerToggle}
-                />
+                <SidebarListSubItem {...props}/>
             )}
         </>
     );

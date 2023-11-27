@@ -2,7 +2,7 @@ import {Avatar, IconButton, Menu, Tooltip} from "@mui/material";
 import React, {useState} from "react";
 import {useTranslations} from "next-intl";
 import {useUser} from "../../../../../hooks";
-import ProfileData from "../profileData";
+import ProfileOptions from "../profileOptions";
 
 function ProfileMenu() {
     const t = useTranslations();
