@@ -1,7 +1,5 @@
-import {resolve} from 'app-root-path'
-
 try {
-    global.WitelConfig = require(resolve('witel.config.json'));
+    global.WitelConfig = require('~/witel.config.json');
     console.log(WitelConfig)
 } catch (error) {
     console.error('Error loading layoutList:', error);
