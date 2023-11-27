@@ -5,7 +5,7 @@ const jsonFilePath = path.resolve(__dirname, 'witel.config.json');
 console.log(jsonFilePath)
 
 try {
-    global.WitelConfig = require('~/witel.config.json');
+    global.WitelConfig = require(jsonFilePath);
     console.log(WitelConfig)
 } catch (error) {
     console.error('Error loading layoutList:', error);
