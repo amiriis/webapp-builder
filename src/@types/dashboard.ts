@@ -23,7 +23,8 @@ export interface IDashboardProps {
     widget?: ReactNode,
     window: any,
     permissions: string[],
-    sidebarMenu: ISidebarMenuList
+    sidebarMenu: ISidebarMenuList,
+    headerProfileItems: { key: number | string, name: string, route: string, icon: any }[],
     notificationServer: {
         notification_count?: object,
         update_notification?: any

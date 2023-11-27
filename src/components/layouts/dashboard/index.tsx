@@ -22,6 +22,7 @@ export const Dashboard: React.FC<React.PropsWithChildren<IDashboardProps>> = (pr
             <Header
                 handleDrawerToggle={handleDrawerToggle}
                 drawerWidth={drawerWidth}
+                {...props}
             />
             <Sidebar
                 container={container}

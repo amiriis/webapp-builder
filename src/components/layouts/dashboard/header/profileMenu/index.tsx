@@ -3,8 +3,11 @@ import React, {useState} from "react";
 import {useTranslations} from "next-intl";
 import {useUser} from "../../../../../hooks";
 import ProfileOptions from "../profileOptions";
+import ProfileData from "../profileData";
 
-function ProfileMenu() {
+const ProfileMenu: React.FC<{
+    headerProfileItems: { key: number | string, name: string, route: string, icon: any }[]
+}> = (props) => {
     const t = useTranslations();
     const [anchorElUser, setAnchorElUser] = useState(null);
     const {user} = useUser();
@@ -52,7 +55,7 @@ function ProfileMenu() {
                 onClose={handleCloseUserMenu}
             >
                 <ProfileData/>
-                <ProfileOptions handleCloseUserMenu={handleCloseUserMenu}/>
+                <ProfileOptions handleCloseUserMenu={handleCloseUserMenu} {...props} />
             </Menu>
         </>
     );

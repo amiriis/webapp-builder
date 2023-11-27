@@ -5,7 +5,11 @@ import {AppBar, Box, Container, IconButton, Stack, Toolbar} from "@mui/material"
 import React from "react";
 import ProfileMenu from "./profileMenu";
 
-const Header: React.FC<{ drawerWidth: number, handleDrawerToggle: any }> = ({drawerWidth, handleDrawerToggle}) => {
+const Header: React.FC<{
+    drawerWidth: number,
+    handleDrawerToggle: any,
+    headerProfileItems: { key: number | string, name: string, route: string, icon: any }[]
+}> = (props) => {
     const theme = useTheme();
 
     return (
@@ -14,8 +18,8 @@ const Header: React.FC<{ drawerWidth: number, handleDrawerToggle: any }> = ({dra
             <AppBar
                 position="fixed"
                 sx={{
-                    width: {md: `calc(100% - ${drawerWidth}px)`},
-                    ml: {md: `${drawerWidth}px`},
+                    width: {md: `calc(100% - ${props.drawerWidth}px)`},
+                    ml: {md: `${props.drawerWidth}px`},
                 }}
             >
                 <Container maxWidth="xl">
@@ -29,7 +33,7 @@ const Header: React.FC<{ drawerWidth: number, handleDrawerToggle: any }> = ({dra
                             <IconButton
                                 color="inherit"
                                 aria-label="open drawer"
-                                onClick={handleDrawerToggle}
+                                onClick={props.handleDrawerToggle}
                                 edge="start"
                                 sx={{display: {md: "none"}, m: 0}}
                             >
@@ -63,7 +67,7 @@ const Header: React.FC<{ drawerWidth: number, handleDrawerToggle: any }> = ({dra
                             </Box>
                         </Stack>
                         <Stack direction="row" justifyContent="flex-end" sx={{flex: 1}}>
-                            <ProfileMenu/>
+                            <ProfileMenu {...props}/>
                         </Stack>
                     </Toolbar>
                 </Container>
