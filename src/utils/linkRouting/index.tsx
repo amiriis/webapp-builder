@@ -4,6 +4,7 @@ import clsx from "clsx";
 import NextLink from "next/link";
 import {useRouter} from "next/router";
 import * as React from "react";
+import {ReactNode} from "react";
 
 const Anchor = styled("a")({});
 
@@ -16,6 +17,7 @@ interface NextLinkComposedProps {
     prefetch?: boolean;
     legacyBehavior?: boolean;
     locale?: string;
+    onClick?: any;
 }
 
 export const NextLinkComposed = React.forwardRef<HTMLAnchorElement, NextLinkComposedProps>(
@@ -64,6 +66,11 @@ interface LinkRoutingProps {
     role?: string;
     scroll?: boolean;
     shallow?: boolean;
+    color?: string,
+    passHref?: boolean,
+    underline?: "none" | "hover" | "always",
+    children?: ReactNode,
+    onClick?: any
 }
 
 export const LinkRouting = React.forwardRef<HTMLAnchorElement, LinkRoutingProps>(

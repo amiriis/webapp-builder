@@ -1,4 +1,5 @@
 export * from './app'
 export * from './center'
+export * from './dashboard'
 export * from './fullPage'
 export * from './mui'
