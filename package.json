@@ -9,6 +9,7 @@
     "dist"
   ],
   "scripts": {
+    "build": "tsc",
     "prebuild": "rd /s /q dist 2>nul && echo Deleted /dist || echo ok",
     "prepublishOnly": "npm run build && git push",
     "test": "echo \"Error: no test specified\" && exit 1"
