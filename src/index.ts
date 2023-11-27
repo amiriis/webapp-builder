@@ -1,13 +1,6 @@
-import * as path from "path";
+const myPackageConfig = require('witel/config');
 
-const jsonFilePath = path.resolve('@/../witel.config.json');
-
-try {
-    global.WitelConfig = require(jsonFilePath);
-    console.log(WitelConfig)
-} catch (error) {
-    console.error('Error loading layoutList:', error);
-}
+console.log(myPackageConfig.mySetting);
 
 export * from './components'
 export * from './contexts'
