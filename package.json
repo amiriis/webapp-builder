@@ -1,7 +1,7 @@
 {
   "name": "@witel/webapp-builder",
   "private": false,
-  "version": "0.5.8",
+  "version": "0.5.9",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,7 +9,6 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc",
     "prebuild": "rd /s /q dist 2>nul && echo Deleted /dist || echo ok",
     "prepublishOnly": "npm run build && git push",
     "test": "echo \"Error: no test specified\" && exit 1"
