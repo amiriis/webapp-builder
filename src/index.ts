@@ -1,3 +1,9 @@
+import * as path from "path";
+
+const jsonFilePath = path.resolve(__dirname, 'witel.config.json');
+
+console.log(jsonFilePath)
+
 try {
     global.WitelConfig = require('~/witel.config.json');
     console.log(WitelConfig)
