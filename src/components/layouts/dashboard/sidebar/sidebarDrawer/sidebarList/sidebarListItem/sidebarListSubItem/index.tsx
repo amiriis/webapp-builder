@@ -14,10 +14,11 @@ import {useTranslations} from "next-intl";
 import React from "react";
 import {NextLinkComposed} from "../../../../../../../../utils";
 import {IMenuItem, SidebarListItemProps} from "../../../../../../../../@types/dashboard";
+import {useNotification} from "../../../../../../../../hooks/useNotification";
 
 const SidebarListSubItem: React.FC<SidebarListItemProps> = (props) => {
     const t = useTranslations();
-    const {notification_count} = props.notificationServer
+    const {notification_count} = useNotification(props.urlNotification)
     const renderBadge = (_subItem: IMenuItem) => (
         <IconButton>
             <Badge

@@ -26,7 +26,7 @@ export const useRequest = (initOptions: any) => {
     const {pushToastList, dismissToastList} = useToast();
     let _options = {...defaultOptions, ...initOptions}
 
-    function requestServer(url = '', method = 'get', options: any) {
+    function requestServer(url = '', method = 'get', options?: any) {
         _options = {..._options, ...options}
         if (_options.auth) _options = {
             ..._options, requestOptions: {

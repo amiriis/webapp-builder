@@ -15,10 +15,11 @@ import React from "react";
 import {NextLinkComposed} from "../../../../../../../utils";
 import {SidebarListActionEnum, SidebarListItemProps} from "../../../../../../../@types/dashboard";
 import SidebarListSubItem from "./sidebarListSubItem";
+import {useNotification} from "../../../../../../../hooks/useNotification";
 
 const SidebarListItem: React.FC<SidebarListItemProps> = (props) => {
     const t = useTranslations();
-    const {notification_count} = props.notificationServer
+    const {notification_count} = useNotification(props.urlNotification)
     const hasSubItems = props.item.type === "menu" && props.item.subItem && props.item.subItem.length > 0;
     const renderBadge = () => {
         return !hasSubItems ? (

@@ -25,10 +25,7 @@ export interface IDashboardProps {
     permissions: string[],
     sidebarMenu: ISidebarMenuList,
     headerProfileItems: { key: number | string, name: string, route: string, icon: any }[],
-    notificationServer: {
-        notification_count?: object,
-        update_notification?: any
-    }
+    urlNotification: string
 }
 
 export interface SidebarProps extends IDashboardProps {
@@ -46,7 +43,6 @@ export interface SidebarListItemProps extends IDashboardProps {
     item: ISidebarMenu,
     dispatch: React.Dispatch<SidebarListAction>;
     handleDrawerToggle: any;
-    notificationServer: any;
 }
 
 export interface SidebarListAction {
