@@ -1,7 +1,7 @@
 {
   "name": "@witel/webapp-builder",
   "private": false,
-  "version": "0.5.16",
+  "version": "0.5.17",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,6 +13,10 @@
     "prebuild": "rd /s /q dist 2>nul && echo Deleted /dist || echo ok",
     "prepublishOnly": "npm run build && git push",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "url": "https://github.com/amiriis/webapp-builder.git",
+    "type": "git"
   },
   "author": "",
   "license": "ISC",
