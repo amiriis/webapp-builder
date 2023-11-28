@@ -58,7 +58,8 @@ const SidebarListSubItem: React.FC<SidebarListItemProps> = (props) => {
                                 }}
                             >
                                 {_subItem.routing ?
-                                    <CircularProgress size={24} color="inherit"/> : _subItem.icon}
+                                    <CircularProgress size={24} color="inherit"/> :
+                                    <span dangerouslySetInnerHTML={{__html: _subItem.icon}}></span>}
                             </ListItemIcon>
                             <ListItemText primary={t(_subItem.key)} secondary={
                                 _subItem.secondary !== undefined ? (
