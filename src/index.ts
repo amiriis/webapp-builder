@@ -1,7 +1,3 @@
-const myPackageConfig = require('witel/config');
-
-console.log(myPackageConfig.mySetting);
-
 export * from './components'
 export * from './contexts'
 export * from './hooks'
