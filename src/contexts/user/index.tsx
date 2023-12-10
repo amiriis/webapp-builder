@@ -39,7 +39,10 @@ const reducer = (state: IUserState, action: IUserAction) => {
 
 export const UserContext = createContext<IUserContext | undefined>(undefined)
 
-export const UserProvider: React.FC<React.PropsWithChildren<{ urlGetUser: string, schemaGetUser?: (data: object) => object }>> = ({children, urlGetUser, schemaGetUser}) => {
+export const UserProvider: React.FC<React.PropsWithChildren<{
+    urlGetUser: string,
+    schemaGetUser?: (data: object) => object
+}>> = ({children, urlGetUser, schemaGetUser}) => {
     const [state, dispatch] = useReducer(reducer, initialUser);
 
     const clearUser = useCallback(() =>
@@ -82,7 +85,13 @@ export const UserProvider: React.FC<React.PropsWithChildren<{ urlGetUser: string
 
                 })
                 .catch(error => {
-                    if (error.response.status === 401) clearToken()
+                    if (error.response) {
+                        if (error.response.status === 401) clearToken()
+                    } else if (error.request) {
+                        console.log(error.request);
+                    } else {
+                        console.log('Error', error.message);
+                    }
                 })
         },
         [state.token]
