@@ -4,9 +4,7 @@ import {LoadingHardPage} from "../../components";
 
 export const LoadingContext = createContext<ILoadingContext | undefined>(undefined)
 
-export const LoadingProvider: React.FC<React.PropsWithChildren<{
-    LoadingComponent: React.FC<{ loading: boolean }>
-}>> = ({children, LoadingComponent}) => {
+export const LoadingProvider: React.FC<React.PropsWithChildren> = ({children}) => {
     const [loadingPage, setLoadingPage] = useState(false);
     return (
         <LoadingContext.Provider value={{loadingPage, setLoadingPage}}>
