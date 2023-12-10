@@ -1,25 +1,15 @@
 import {useRouter} from "next/router";
 import React, {createContext, useEffect, useState} from "react";
-import {Direction, ILanguageContext, ILanguageDefaultValues} from "../../@types/language";
+import {Direction, ILanguageContext, ILanguageList} from "../../@types/language";
 import {useUser} from "../../hooks";
 
 export const LanguageContext = createContext<ILanguageContext | undefined>(undefined)
 
 export const LanguageProvider: React.FC<React.PropsWithChildren<{
-    defaultValues: ILanguageDefaultValues,
+    languageList: ILanguageList[]
     defaultLanguage: string
-}>> = ({children, defaultValues, defaultLanguage}) => {
+}>> = ({children, languageList, defaultLanguage}) => {
     const router = useRouter();
-    const languageList = [
-        {
-            key: "fa",
-            dir: Direction.RTL,
-            name: "فارسی",
-            fontFamily: `IRANSans, sans-serif`,
-            tableLocalization: defaultValues.fa.datatable,
-            chartLocalization: defaultValues.fa.chart
-        }
-    ];
     const {user, userChangedLanguage, changeLanguageState} = useUser();
     const [languageIsReady, setLanguageIsReady] = useState(false);
     const [languageApp, setLanguageApp] = useState(defaultLanguage);
@@ -67,7 +57,7 @@ export const LanguageProvider: React.FC<React.PropsWithChildren<{
             return;
         }
         for (const lang of languageList) {
-            if (languageApp != lang.key) continue;
+            if (languageApp !== lang.key) continue;
             setDirectionApp(lang.dir);
             document.dir = lang.dir;
         }

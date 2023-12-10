@@ -14,19 +14,14 @@ export interface ILanguageContext {
     directionApp: DirectionType,
     languageIsReady: boolean,
     setLanguageIsReady: React.Dispatch<React.SetStateAction<boolean>>,
-    languageList: {
-        key: string;
-        dir: DirectionType;
-        name: string;
-        fontFamily: string;
-        tableLocalization: any;
-        chartLocalization: any;
-    }[]
+    languageList: ILanguageList[]
 }
 
-export interface ILanguageDefaultValues {
-    [key: string]: {
-        datatable: any,
-        chart: any
-    }
+export interface ILanguageList {
+    key: string;
+    dir: DirectionType;
+    name: string;
+    fontFamily: string;
+    tableLocalization: any;
+    chartLocalization: any;
 }
