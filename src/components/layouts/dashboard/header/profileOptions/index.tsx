@@ -40,8 +40,8 @@ const ProfileOptions: React.FC<{
                                 color: "primary.main",
                                 pr: 2,
                             }}
-                            {profile_item.icon}
                         >
+                            {profile_item.icon}
                         </Box>
                         <Typography sx={{flex: 1}} textAlign="start">
                             {t(profile_item.name)}
