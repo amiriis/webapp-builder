@@ -48,31 +48,17 @@ const SidebarListSubItem: React.FC<SidebarListItemProps> = (props) => {
                                 minHeight: 48,
                             }}
                         >
-                            {_subItem.routing ?
-                                <ListItemIcon
-                                    sx={{
-                                        minWidth: 0,
-                                        justifyContent: "center",
-                                        width: 40,
-                                        height: 24,
-                                        pr: 2,
-                                    }}
-                                >
-                                    <CircularProgress size={24} color="inherit"/> :
-                                </ListItemIcon>
-                                :
-                                <ListItemIcon
-                                    sx={{
-                                        minWidth: 0,
-                                        justifyContent: "center",
-                                        width: 40,
-                                        height: 24,
-                                        pr: 2,
-                                    }}
-                                    dangerouslySetInnerHTML={{__html: _subItem.icon}}
-                                >
-                                </ListItemIcon>
-                            }
+                            <ListItemIcon
+                                sx={{
+                                    minWidth: 0,
+                                    justifyContent: "center",
+                                    width: 40,
+                                    height: 24,
+                                    pr: 2,
+                                }}
+                            >
+                                {_subItem.routing ? <CircularProgress size={24} color="inherit"/> : _subItem.icon}
+                            </ListItemIcon>
                             <ListItemText primary={t(_subItem.key)} secondary={
                                 _subItem.secondary !== undefined ? (
                                     <Typography variant="caption" color="textSecondary">

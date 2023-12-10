@@ -7,7 +7,6 @@ export const DashboardLayout: React.FC<React.PropsWithChildren<IDashboardProps>>
     return (
         <WithAuthMiddleware>
             <Dashboard {...props}/>
-            {props.widget}
         </WithAuthMiddleware>
     );
 };

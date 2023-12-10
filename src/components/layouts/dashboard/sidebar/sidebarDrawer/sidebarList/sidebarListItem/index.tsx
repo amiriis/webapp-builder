@@ -58,31 +58,17 @@ const SidebarListItem: React.FC<SidebarListItemProps> = (props) => {
                     }}
 
                 >
-                    {props.item.routing ?
-                        <ListItemIcon
-                            sx={{
-                                minWidth: 0,
-                                justifyContent: "center",
-                                width: 40,
-                                height: 24,
-                                pr: 2,
-                            }}
-                        >
-                            <CircularProgress size={24} color="inherit"/> :
-                        </ListItemIcon>
-                        :
-                        <ListItemIcon
-                            sx={{
-                                minWidth: 0,
-                                justifyContent: "center",
-                                width: 40,
-                                height: 24,
-                                pr: 2,
-                            }}
-                            dangerouslySetInnerHTML={{__html: props.item.icon}}
-                        >
-                        </ListItemIcon>
-                    }
+                    <ListItemIcon
+                        sx={{
+                            minWidth: 0,
+                            justifyContent: "center",
+                            width: 40,
+                            height: 24,
+                            pr: 2,
+                        }}
+                    >
+                        {props.item.routing ? <CircularProgress size={24} color="inherit"/> : props.item.icon}
+                    </ListItemIcon>
                     <ListItemText
                         primary={t(props.item.key)}
                         secondary={
