@@ -1,5 +1,6 @@
 import React, {createContext, useState} from "react";
 import {ILoadingContext} from "../../@types/loading";
+import {LoadingHardPage} from "../../components";
 
 export const LoadingContext = createContext<ILoadingContext | undefined>(undefined)
 
@@ -9,7 +10,7 @@ export const LoadingProvider: React.FC<React.PropsWithChildren<{
     const [loadingPage, setLoadingPage] = useState(false);
     return (
         <LoadingContext.Provider value={{loadingPage, setLoadingPage}}>
-            <LoadingComponent loading={loadingPage}/>
+            <LoadingHardPage loading={loadingPage}/>
             {children}
         </LoadingContext.Provider>
     );

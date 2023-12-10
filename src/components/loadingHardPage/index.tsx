@@ -23,11 +23,11 @@ const LoadingImage = styled(Box)({
 
 export const LoadingHardPage: React.FC<React.PropsWithChildren<{
     loading: boolean,
-    sx: any,
-    icon: any,
-    width: string | number,
-    height: string | number,
-    label: string
+    sx?: any,
+    icon?: any,
+    width?: string | number,
+    height?: string | number,
+    label?: string
 }>> = ({
            children,
            loading,
