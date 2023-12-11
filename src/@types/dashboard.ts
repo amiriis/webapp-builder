@@ -1,4 +1,4 @@
-import React, {ReactNode} from "react";
+import React from "react";
 
 export interface IMenuItem {
     key: string,
@@ -20,12 +20,23 @@ export interface ISidebarMenu extends IMenuItem {
 export type ISidebarMenuList = ISidebarMenu[][]
 
 export interface IDashboardProps {
-    widget?: ReactNode,
+    user_introduction: string,
+    loginUrl: string,
     window: any,
     permissions: string[],
     sidebarMenu: ISidebarMenuList,
     headerProfileItems: { key: number | string, name: string, route: string, icon: any }[],
     urlNotification: string
+}
+
+export interface HeaderProps extends IDashboardProps {
+    drawerWidth: number,
+    handleDrawerToggle: any,
+    headerProfileItems: { key: number | string, name: string, route: string, icon: any }[]
+}
+
+export interface HeaderProfileProps extends HeaderProps {
+    handleCloseUserMenu: any
 }
 
 export interface SidebarProps extends IDashboardProps {

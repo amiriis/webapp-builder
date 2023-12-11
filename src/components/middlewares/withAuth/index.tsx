@@ -5,7 +5,7 @@ import {Message} from "../../message";
 import React from "react";
 import {NextLinkComposed} from "../../../utils";
 
-export const WithAuthComponent = () => {
+export const WithAuthComponent: React.FC<{ loginUrl: string }> = (props) => {
     const router = useRouter();
     const t = useTranslations();
 
@@ -22,7 +22,7 @@ export const WithAuthComponent = () => {
                         variant="contained"
                         component={NextLinkComposed}
                         to={{
-                            pathname: "/login",
+                            pathname: props.loginUrl,
                             query: {back_url: encodeURIComponent(router.asPath)},
                         }}
                     >

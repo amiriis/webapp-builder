@@ -4,12 +4,9 @@ import CssBaseline from "@mui/material/CssBaseline";
 import {AppBar, Box, Container, IconButton, Stack, Toolbar} from "@mui/material";
 import React from "react";
 import ProfileMenu from "./profileMenu";
+import {HeaderProps} from "../../../../@types/dashboard";
 
-const Header: React.FC<{
-    drawerWidth: number,
-    handleDrawerToggle: any,
-    headerProfileItems: { key: number | string, name: string, route: string, icon: any }[]
-}> = (props) => {
+const Header: React.FC<HeaderProps> = (props) => {
     const theme = useTheme();
 
     return (

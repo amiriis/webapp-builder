@@ -3,19 +3,14 @@ import {useTranslations} from "next-intl";
 import React from "react";
 import {NextLinkComposed} from "../../../../../utils";
 import ProfileOptionLogout from "./profileOptionLogout";
+import {HeaderProfileProps} from "../../../../../@types/dashboard";
 
-const ProfileOptions: React.FC<{
-    headerProfileItems: { key: number | string, name: string, route: string, icon: any }[],
-    handleCloseUserMenu: any
-}> = ({
-          headerProfileItems,
-          handleCloseUserMenu
-      }) => {
+const ProfileOptions: React.FC<HeaderProfileProps> = (props) => {
     const t = useTranslations();
 
     return (
         <>
-            {headerProfileItems.map((profile_item) => (
+            {props.headerProfileItems.map((profile_item) => (
                 <MenuItem
                     component={NextLinkComposed}
                     to={{
@@ -30,7 +25,7 @@ const ProfileOptions: React.FC<{
                         borderColor: "#e1e1e1",
                     }}
                     key={profile_item.key}
-                    onClick={handleCloseUserMenu}
+                    onClick={props.handleCloseUserMenu}
                 >
                     <Box sx={{display: "flex", alignItems: "center", flex: 1}}>
                         <Box
@@ -49,7 +44,7 @@ const ProfileOptions: React.FC<{
                     </Box>
                 </MenuItem>
             ))}
-            <ProfileOptionLogout handleCloseUserMenu={handleCloseUserMenu}/>
+            <ProfileOptionLogout {...props}/>
         </>
     );
 }

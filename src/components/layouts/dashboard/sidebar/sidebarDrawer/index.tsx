@@ -16,7 +16,7 @@ const SidebarDrawer: React.FC<SidebarDrawerAndListProps> = (props) => {
                         {t("app_short_name")}
                     </Typography>
                     <Typography variant="caption">
-                        {user.full_name} | {user.position}
+                        {props.user_introduction}
                     </Typography>
                 </Stack>
             </Toolbar>

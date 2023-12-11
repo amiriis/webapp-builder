@@ -5,7 +5,7 @@ import {Dashboard} from "../../components";
 
 export const DashboardLayout: React.FC<React.PropsWithChildren<IDashboardProps>> = (props) => {
     return (
-        <WithAuthMiddleware>
+        <WithAuthMiddleware loginUrl={props.loginUrl}>
             <Dashboard {...props}/>
         </WithAuthMiddleware>
     );

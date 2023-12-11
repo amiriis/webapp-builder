@@ -3,14 +3,13 @@ import MeetingRoomIcon from "@mui/icons-material/MeetingRoom";
 import {useTranslations} from "next-intl";
 import React from "react";
 import {useUser} from "../../../../../../hooks";
+import {HeaderProfileProps} from "../../../../../../@types/dashboard";
 
-const ProfileOptionLogout: React.FC<{
-    handleCloseUserMenu: any
-}> = ({handleCloseUserMenu}) => {
+const ProfileOptionLogout: React.FC<HeaderProfileProps> = (props) => {
     const t = useTranslations();
     const {clearToken} = useUser();
     const handleClickLogout = () => {
-        handleCloseUserMenu();
+        props.handleCloseUserMenu();
         clearToken();
     };
 

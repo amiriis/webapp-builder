@@ -4,10 +4,9 @@ import {useTranslations} from "next-intl";
 import {useUser} from "../../../../../hooks";
 import ProfileOptions from "../profileOptions";
 import ProfileData from "../profileData";
+import {HeaderProps} from "../../../../../@types/dashboard";
 
-const ProfileMenu: React.FC<{
-    headerProfileItems: { key: number | string, name: string, route: string, icon: any }[]
-}> = (props) => {
+const ProfileMenu: React.FC<HeaderProps> = (props) => {
     const t = useTranslations();
     const [anchorElUser, setAnchorElUser] = useState(null);
     const {user} = useUser();
