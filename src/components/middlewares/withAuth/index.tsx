@@ -22,7 +22,7 @@ export const WithAuthComponent = () => {
                         variant="contained"
                         component={NextLinkComposed}
                         to={{
-                            pathname: "/login-expert",
+                            pathname: "/login",
                             query: {back_url: encodeURIComponent(router.asPath)},
                         }}
                     >

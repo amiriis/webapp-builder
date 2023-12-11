@@ -62,6 +62,7 @@ const SidebarListItem: React.FC<SidebarListItemProps> = (props) => {
                         sx={{
                             minWidth: 0,
                             justifyContent: "center",
+                            color: "primary.main",
                             width: 40,
                             height: 24,
                             pr: 2,

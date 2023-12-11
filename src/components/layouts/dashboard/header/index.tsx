@@ -22,7 +22,7 @@ const Header: React.FC<{
                     ml: {md: `${props.drawerWidth}px`},
                 }}
             >
-                <Container maxWidth="xl">
+                <Container>
                     <Toolbar
                         disableGutters
                         sx={{
