@@ -61,7 +61,7 @@ const Content: React.FC<React.PropsWithChildren<IDashboardProps>> = (props) => {
                              loading={routing} width={100} height={100}
                              sx={{position: "absolute", bgcolor: "#fffc"}}>
                 <RolePermissionMiddleware requiredPermissions={props.permissions}>
-                    <BreadCrumbs isVisible={true}/>
+                    <BreadCrumbs {...props}/>
                     {props.children}
                 </RolePermissionMiddleware>
             </LoadingHardPage>

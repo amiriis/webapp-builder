@@ -26,7 +26,9 @@ export interface IDashboardProps {
     permissions: string[],
     sidebarMenu: ISidebarMenuList,
     headerProfileItems: { key: number | string, name: string, route: string, icon: any }[],
-    urlNotification: string
+    urlNotification: string,
+    BC_segmentsToRemove?: string[]
+    BC_isVisible?: boolean
 }
 
 export interface HeaderProps extends IDashboardProps {
