@@ -1,12 +1,14 @@
 import React from "react";
-import {WithAuthMiddleware} from "../../middlewares";
 import {IDashboardProps} from "../../@types/dashboard";
 import {Dashboard} from "../../components";
+import {RecursiveComponent} from "../../utils";
+import {WithAuthMiddleware} from "../../middlewares";
 
 export const DashboardLayout: React.FC<React.PropsWithChildren<IDashboardProps>> = (props) => {
+    const {middlewares, ...restProps} = props;
     return (
-        <WithAuthMiddleware loginUrl={props.loginUrl}>
+        <RecursiveComponent list={[WithAuthMiddleware, ...middlewares]} {...restProps}>
             <Dashboard {...props}/>
-        </WithAuthMiddleware>
+        </RecursiveComponent>
     );
 };
