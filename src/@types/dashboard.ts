@@ -27,7 +27,10 @@ export interface IDashboardProps {
     sidebarMenu: ISidebarMenuList,
     headerProfileItems: { key: number | string, name: string, route: string, icon: any }[],
     urlNotification: string,
-    middlewares: React.FC<any>[] | [],
+    middlewares: {
+        list: React.FC<any>[] | []
+        props: {}
+    }
     BC_segmentsToRemove?: string[],
     BC_isVisible?: boolean
 }

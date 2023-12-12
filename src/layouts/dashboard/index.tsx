@@ -5,9 +5,8 @@ import {RecursiveComponent} from "../../utils";
 import {WithAuthMiddleware} from "../../middlewares";
 
 export const DashboardLayout: React.FC<React.PropsWithChildren<IDashboardProps>> = (props) => {
-    const {middlewares, ...restProps} = props;
     return (
-        <RecursiveComponent list={[WithAuthMiddleware, ...middlewares]} {...restProps}>
+        <RecursiveComponent list={[WithAuthMiddleware, ...props.middlewares.list]} {...props.middlewares.props}>
             <Dashboard {...props}/>
         </RecursiveComponent>
     );
