@@ -1,6 +1,9 @@
 import React from "react";
 
 interface RecursiveComponentProps {
+    list: React.FC<any>[];
+    children?: React.ReactNode;
+
     [key: string]: any,
 }
 

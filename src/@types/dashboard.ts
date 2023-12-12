@@ -1,4 +1,4 @@
-import React, {ReactDOM} from "react";
+import React from "react";
 
 export interface IMenuItem {
     key: string,
@@ -27,7 +27,7 @@ export interface IDashboardProps {
     sidebarMenu: ISidebarMenuList,
     headerProfileItems: { key: number | string, name: string, route: string, icon: any }[],
     urlNotification: string,
-    middlewares: ReactDOM[] | [],
+    middlewares: React.FC<any>[] | [],
     BC_segmentsToRemove?: string[],
     BC_isVisible?: boolean
 }
