@@ -1,8 +1,9 @@
 import {Avatar, Stack, Typography} from "@mui/material";
 import {useUser} from "../../../../../hooks";
 import React from "react";
+import {HeaderProps} from "../../../../../@types/dashboard";
 
-export default function ProfileData() {
+const ProfileData: React.FC<HeaderProps> = (props) => {
     const {user} = useUser();
     return (
         <Stack alignItems="center" spacing={2} sx={{p: 3}}>
@@ -12,8 +13,10 @@ export default function ProfileData() {
                 src={user.avatar || ''}
             />
             <Typography sx={{fontSize: 15, fontWeight: 600}} textAlign="center">
-                {user.username}
+                {props.user_introduction}
             </Typography>
         </Stack>
     );
 }
+
+export default ProfileData

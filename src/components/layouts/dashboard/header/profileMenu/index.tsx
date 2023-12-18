@@ -53,7 +53,7 @@ const ProfileMenu: React.FC<HeaderProps> = (props) => {
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
             >
-                <ProfileData/>
+                <ProfileData {...props} />
                 <ProfileOptions handleCloseUserMenu={handleCloseUserMenu} {...props} />
             </Menu>
         </>
