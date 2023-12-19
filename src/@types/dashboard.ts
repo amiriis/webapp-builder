@@ -33,7 +33,8 @@ export interface IDashboardProps {
         props: {}
     }
     BC_segmentsToRemove?: string[],
-    BC_isVisible?: boolean
+    BC_isVisible?: boolean,
+    drawerWidth?: number
 }
 
 export interface HeaderProps extends IDashboardProps {

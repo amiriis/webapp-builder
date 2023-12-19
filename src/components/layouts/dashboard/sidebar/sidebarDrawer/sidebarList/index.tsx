@@ -93,7 +93,7 @@ const SidebarList: React.FC<SidebarDrawerAndListProps> = (props) => {
     }, [selectedKey]);
 
     return (
-        <List dense={true} sx={{overflow: "scroll"}}>
+        <List dense={true} sx={{overflow: "scroll", p: 0}}>
             {itemMenu.map((itemArr, index) => (
                 <Fragment key={index}>
                     {itemArr.map((item) =>

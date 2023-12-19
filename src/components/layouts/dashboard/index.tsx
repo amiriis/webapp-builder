@@ -6,13 +6,13 @@ import Header from "./header";
 import {IDashboardProps} from "../../../@types/dashboard";
 import Sidebar from "./sidebar";
 
-const drawerWidth = 240;
 
 export const Dashboard: React.FC<React.PropsWithChildren<IDashboardProps>> = (props) => {
     const {window} = props;
     const [mobileOpen, setMobileOpen] = useState(false);
     const container =
         window !== undefined ? () => window().document.body : undefined;
+    const drawerWidth = props.drawerWidth || 240;
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
