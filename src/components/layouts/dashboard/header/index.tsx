@@ -64,6 +64,7 @@ const Header: React.FC<HeaderProps> = (props) => {
                             </Box>
                         </Stack>
                         <Stack direction="row" justifyContent="flex-end" sx={{flex: 1}}>
+                            {props.HeaderItem}
                             <ProfileMenu {...props}/>
                         </Stack>
                     </Toolbar>
