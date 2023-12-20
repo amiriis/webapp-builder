@@ -10,9 +10,6 @@ export const WithoutAuthComponent: React.FC<{ backUrlDecodedPath: string }> = ({
         <Message
             text={
                 <Stack alignItems="center" spacing={2}>
-                    <Typography sx={{textAlign: "center"}}>
-                        {t("Authorization.typography_your_login_is_valid_and_you_do_not_need_to_login_again")}
-                    </Typography>
                     <Typography>
                         {t("Authorization.typography_redirect_to")}{" "}
                         {backUrlDecodedPath
