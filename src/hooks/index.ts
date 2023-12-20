@@ -1,3 +1,4 @@
+export * from './useConfig'
 export * from './useDirecrion'
 export * from './useLanguage'
 export * from './useLoading'

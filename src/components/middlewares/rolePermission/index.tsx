@@ -4,7 +4,7 @@ import {Message} from "../../message";
 import {NextLinkComposed} from "../../../utils";
 import React from "react";
 
-export const RolePermissionComponent = () => {
+export const RolePermissionComponent: React.FC = () => {
     const t = useTranslations();
 
     return (
