@@ -22,7 +22,7 @@ export type ISidebarMenuList = ISidebarMenu[][]
 export interface IDashboardProps {
     user_introduction: string,
     headerSubtitle: string,
-    HeaderItem: any
+    HeaderItem: any[]
     loginUrl: string,
     window: any,
     permissions: string[],
