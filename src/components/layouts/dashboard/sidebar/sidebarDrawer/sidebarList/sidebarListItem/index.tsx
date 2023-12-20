@@ -15,7 +15,7 @@ import React from "react";
 import {NextLinkComposed} from "../../../../../../../utils";
 import {SidebarListActionEnum, SidebarListItemProps} from "../../../../../../../@types/dashboard";
 import SidebarListSubItem from "./sidebarListSubItem";
-import {useNotification} from "../../../../../../../hooks/useNotification";
+import {useNotification} from "../../../../../../../hooks";
 
 const SidebarListItem: React.FC<SidebarListItemProps> = (props) => {
     const t = useTranslations();
@@ -52,6 +52,7 @@ const SidebarListItem: React.FC<SidebarListItemProps> = (props) => {
                         if (hasSubItems) {
                             props.dispatch({type: SidebarListActionEnum.COLLAPSE_MENU, key: props.item.key});
                         }
+                        props.handleDrawerToggle()
                     }}
                     sx={{
                         minHeight: 48,

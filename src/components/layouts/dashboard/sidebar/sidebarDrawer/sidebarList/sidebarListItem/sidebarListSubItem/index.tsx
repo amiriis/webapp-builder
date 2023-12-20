@@ -14,7 +14,7 @@ import {useTranslations} from "next-intl";
 import React from "react";
 import {NextLinkComposed} from "../../../../../../../../utils";
 import {IMenuItem, SidebarListItemProps} from "../../../../../../../../@types/dashboard";
-import {useNotification} from "../../../../../../../../hooks/useNotification";
+import {useNotification} from "../../../../../../../../hooks";
 
 const SidebarListSubItem: React.FC<SidebarListItemProps> = (props) => {
     const t = useTranslations();
@@ -43,6 +43,9 @@ const SidebarListSubItem: React.FC<SidebarListItemProps> = (props) => {
                             component={NextLinkComposed}
                             to={{
                                 pathname: _subItem.route,
+                            }}
+                            onClick={() => {
+                                props.handleDrawerToggle()
                             }}
                             sx={{
                                 minHeight: 48,
