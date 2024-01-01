@@ -2,7 +2,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import {useTheme} from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import {AppBar, Box, Container, IconButton, Stack, Toolbar} from "@mui/material";
-import React from "react";
+import React, {Fragment} from "react";
 import ProfileMenu from "./profileMenu";
 import {HeaderProps} from "../../../../@types/dashboard";
 
@@ -64,10 +64,10 @@ const Header: React.FC<HeaderProps> = (props) => {
                             </Box>
                         </Stack>
                         <Stack direction="row" justifyContent="flex-end" sx={{flex: 1}}>
-                            {props.HeaderItem.map(item => (
-                                <>
+                            {props.HeaderItem.map((item, index) => (
+                                <Fragment key={index}>
                                     {item}
-                                </>
+                                </Fragment>
                             ))}
                             <ProfileMenu {...props}/>
                         </Stack>
